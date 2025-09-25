@@ -1,0 +1,98 @@
+.TH DOH-CLI 1 "September 2025" "0.8" "Simple DNS-over-HTTPS client"
+
+.SH NAME
+
+\fBdoh-cli\fR - a simple DNS over HTTPS client.
+
+.SH SYNOPSIS
+
+.B doh-cli
+.RI [ " OPTIONS " ]
+\fIdomain\fR
+[ \fIrr\fR ... ]
+
+.IR rr " := { A | AAAA | CNAME | HTTPS | MX | NS | SOA | SPF | SRV | SVCB | TXT | CAA | DNSKEY | DS }"
+
+.SH DESCRIPTION
+
+This is a simple DoH Python client (RFC 8484, GET), which supports plain and json output.
+
+.SH OPTIONS
+
+.TP
+.BR --debug
+show the entire response.
+
+.TP
+.BR --dns " " \fIdns\fR
+choose DoH endpoint. Possible values of \fIdns\fR are:
+.RS 4
+.IP "\fBlibredns\fR" 4
+.IX Item "libredns"
+The default value.
+.IP "\fBlibredns-ads\fR" 4
+.IX Item "libredns-ads"
+LibreDNS No-Trackers/Ads.
+.IP "\fBgoogle\fR" 4
+.IX Item "google"
+.IP "\fBcloudflare\fR" 4
+.IX Item "cloudflare"
+.IP "\fBquad9\fR" 4
+.IX Item "quad9"
+.IP "\fBcleanbrowsing\fR" 4
+.IX Item "cleanbrowsing"
+blocks access to adult, pornographic and explicit sites, also VPNs.
+.IP "\fBcleanbrowsing-secure\fR" 4
+.IX Item "cleanbrowsing-secure"
+blocks access to phishing, malware and malicious domains.
+.IP "\fBcleanbrowsing-adult\fR" 4
+.IX Item "cleanbrowsing-adult"
+blocks access to all adult, pornographic and explicit sites.
+.IP "\fBcira\fR" 4
+.IX Item "cira"
+CIRA's Canadian Shield.
+.IP "\fBcira-protect\fR" 4
+.IX Item "cira-protectt"
+malware and phishing protection.
+.IP "\fBcira-family\fR" 4
+.IX Item "cira-family"
+blocking pornographic content plus protected.
+.IP "\fBsecuredns\fR" 4
+.IX Item "securedns"
+.IP "\fBsecuredns-ads\fR" 4
+.IX Item "securedns-ads"
+blockign ads, malware and phishing.
+.RE
+
+.TP
+.BR --dnssec
+request DNSSEC signatures.
+
+.TP
+.BR --json
+display DNS response in json format.
+.TP
+.BR --time
+show query time. This value is related to the client request towards the DoH provider, not the actual dns response.
+
+.TP
+.BR --url " " \fIurl\fP
+provide your own DoH endpoint. This option overrides the \fB--dns\fR option.
+
+.TP
+.BR --verbose
+show the entire request.
+
+.TP
+.BR -v ", " --version
+print version information and exit.
+
+.SH EXAMPLES
+
+doh-cli libredns.gr A
+
+doh-cli --json libredns.gr A
+
+You can use \fBjq\fR(1) to format, parse output:
+
+doh-cli --json libredns.gr A | jq .

@@ -1,0 +1,5 @@
+doh-cli (0.8-1) unstable; urgency=low
+
+  * Initial release. (Closes: #958448)
+
+ -- Ermakov Alexander <ermakovav@altgtu.ru>  Fri, 19 Sep 2025 14:48:55 +0700

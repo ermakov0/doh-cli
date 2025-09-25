@@ -1,0 +1,98 @@
+.TH DOH-CLI 1 "Сентябрь 2025" "0.8" "Простой DNS-over-HTTPS клиент"
+
+.SH ИМЯ
+
+\fBdoh-cli\fR - простой DNS over HTTPS клиент.
+
+.SH ОБЗОР
+
+.B doh-cli
+.RI [ " ОПЦИИ " ]
+\fIдомен\fR
+[ \fIrr\fR ... ]
+
+.IR rr " := { A | AAAA | CNAME | HTTPS | MX | NS | SOA | SPF | SRV | SVCB | TXT | CAA | DNSKEY | DS }"
+
+.SH ОПИСАНИЕ
+
+Это простой DoH-клиент (RFC 8484, GET), написанный на Python, с поддержной вывода в формате plain и json.
+
+.SH ОПЦИИ
+
+.TP
+.BR --debug
+выводить полный ответ сервера.
+
+.TP
+.BR --dns " " \fIdns\fR
+использовать DoH-провайдер. \fIdns\fR может принимать значения:
+.RS 4
+.IP "\fBlibredns\fR" 4
+.IX Item "libredns"
+по умолчанию.
+.IP "\fBlibredns-ads\fR" 4
+.IX Item "libredns-ads"
+LibreDNS No-Trackers/Ads.
+.IP "\fBgoogle\fR" 4
+.IX Item "google"
+.IP "\fBcloudflare\fR" 4
+.IX Item "cloudflare"
+.IP "\fBquad9\fR" 4
+.IX Item "quad9"
+.IP "\fBcleanbrowsing\fR" 4
+.IX Item "cleanbrowsing"
+блокировка доступа к порнографическим сайтам и сайтам для взрослых, а также к VPN.
+.IP "\fBcleanbrowsing-secure\fR" 4
+.IX Item "cleanbrowsing-secure"
+блокировка доступа к фишинговым, вредоносным программам и вредоносным доменам.
+.IP "\fBcleanbrowsing-adult\fR" 4
+.IX Item "cleanbrowsing-adult"
+блокировка доступа ко всем сайтам для взрослых.
+.IP "\fBcira\fR" 4
+.IX Item "cira"
+CIRA's Canadian Shield.
+.IP "\fBcira-protect\fR" 4
+.IX Item "cira-protectt"
+защита от вредоносных программ и фишинга.
+.IP "\fBcira-family\fR" 4
+.IX Item "cira-family"
+блокировка порнографического контента плюс защита.
+.IP "\fBsecuredns\fR" 4
+.IX Item "securedns"
+.IP "\fBsecuredns-ads\fR" 4
+.IX Item "securedns-ads"
+блокировка рекламы, вредоносных программ и фишинга.
+.RE
+
+.TP
+.BR --dnssec
+запросить подписи DNSSEC.
+
+.TP
+.BR --json
+отображать ответ DNS в формате json.
+.TP
+.BR --time
+показывать время запроса. Значение равно затраченному времени на запрос клиента к DoH-провайдеру, а не к фактическому ответу DNS.
+
+.TP
+.BR --url " " \fIurl\fP
+использовать cобственный DoH-провайдер. Этот параметр переопределяет параметр \fB--dns\fR.
+
+.TP
+.BR --verbose
+показать весь запрос.
+
+.TP
+.BR -v ", " --version
+показать информацию о версии и выйти.
+
+.SH ПРИМЕРЫ
+
+doh-cli libredns.gr A
+
+doh-cli --json libredns.gr A
+
+Вы можете использовать \fBjq\fR(1), чтобы парсить вывод:
+
+doh-cli --json libredns.gr A | jq .

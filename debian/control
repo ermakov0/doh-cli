@@ -1,0 +1,24 @@
+Source: doh-cli
+Section: net
+Priority: optional
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Ermakov Alexander <ermakovav@altgtu.ru>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-all,
+               python3-dnspython,
+               python3-requests,
+               python3-setuptools,
+Homepage: https://gitlab.com/libreops/doh-cli
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+
+Package: doh-cli
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends},
+Recommends: jq,
+Description: simple DNS-over-HTTPS client
+ A simple DNS over HTTPS client for the command line.
+ .
+ This is a simple DoH Python client (RFC 8484, GET), which supports plain and
+ json output.
