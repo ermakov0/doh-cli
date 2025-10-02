@@ -2,21 +2,26 @@ Source: doh-cli
 Section: net
 Priority: optional
 Maintainer: Debian Python Team <team+python@tracker.debian.org>
-Uploaders: Ermakov Alexander <ermakovav@altgtu.ru>
-Build-Depends: debhelper-compat (= 13),
-               dh-python,
-               python3-all,
-               python3-dnspython,
-               python3-requests,
-               python3-setuptools,
-Homepage: https://gitlab.com/libreops/doh-cli
+Uploaders:
+ Ermakov Alexander <ermakovav@altgtu.ru>,
 Standards-Version: 4.7.2
 Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ python3,
+ python3-setuptools,
+Homepage: https://gitlab.com/libreops/doh-cli
+Vcs-Browser: https://github.com/ermakov0/doh-cli
+Vcs-Git: https://github.com/ermakov0/doh-cli.git -b sid
 
 Package: doh-cli
 Architecture: all
-Depends: ${misc:Depends}, ${python3:Depends},
-Recommends: jq,
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+Recommends:
+ jq,
 Description: simple DNS-over-HTTPS client
  A simple DNS over HTTPS client for the command line.
  .
