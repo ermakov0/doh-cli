@@ -12,6 +12,4 @@ Copyright: 2025, Ermakov Alexander <ermakovav@altgtu.ru>
 License: GPL-3+
 
 License: GPL-3+
-Comment:
- On Debian systems, the complete text of the GNU General
- Public License version 3 can be found in /usr/share/common-licenses/GPL-3
+Reference: /usr/share/common-licenses/GPL-3

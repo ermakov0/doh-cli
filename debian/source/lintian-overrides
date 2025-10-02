@@ -1,0 +1,8 @@
+# License is in Reference field (see bug#786450)
+missing-license-paragraph-in-dep5-copyright gpl-2\+ *
+missing-license-paragraph-in-dep5-copyright gpl-3\+ *
+missing-license-text-in-dep5-copyright GPL-2\+ *
+missing-license-text-in-dep5-copyright GPL-3\+ *
+# Upstream does not provide signed tarballs
+doh-cli source: debian-watch-does-not-check-openpgp-signature
+doh-cli source: maintainer-manual-page [debian/doh-cli.1] [debian/doh-cli.ru.1]
