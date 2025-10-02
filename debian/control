@@ -12,7 +12,7 @@ Build-Depends:
  python3-setuptools,
 Homepage: https://gitlab.com/libreops/doh-cli
 Vcs-Browser: https://github.com/ermakov0/doh-cli
-Vcs-Git: https://github.com/ermakov0/doh-cli.git -b sid
+Vcs-Git: https://github.com/ermakov0/doh-cli.git
 
 Package: doh-cli
 Architecture: all
