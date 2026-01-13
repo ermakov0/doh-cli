@@ -1,3 +1,3 @@
 # Upstream does not provide signed tarballs
 doh-cli source: debian-watch-does-not-check-openpgp-signature
-doh-cli source: maintainer-manual-page [debian/doh-cli*.1]
+doh-cli source: maintainer-manual-page [debian/man/*]

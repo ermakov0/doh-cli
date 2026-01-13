@@ -1,0 +1,2 @@
+bash debian/completions/doh-cli.bash
+fish debian/completions/doh-cli.fish

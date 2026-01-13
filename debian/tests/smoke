@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+doh-cli www.altstu.ru || exit 1
+doh-cli www.altstu.ru | diff - debian/tests/smoke1.stdout || exit 1
+doh-cli --json www.altstu.ru | jq '.[0].Answer' | diff - debian/tests/smoke2.stdout || exit 1

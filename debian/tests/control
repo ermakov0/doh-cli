@@ -1,0 +1,7 @@
+Tests:
+ smoke,
+Depends:
+ jq,
+ @,
+Restrictions:
+ needs-internet,

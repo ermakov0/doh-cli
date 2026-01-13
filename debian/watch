@@ -1,4 +1,4 @@
-version=4
-# try also https://pypi.debian.net/doh-cli/watch
-opts=uversionmangle=s/(rc|a|b|c)/~$1/ \
-https://pypi.debian.net/doh-cli/doh-cli-(.+)\.(?:zip|tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz)))
+Version: 5
+
+Source: https://pypi.debian.net/doh-cli/
+Matching-Pattern: .*?@ANY_VERSION@@ARCHIVE_EXT@

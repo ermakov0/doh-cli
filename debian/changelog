@@ -1,3 +1,13 @@
+doh-cli (0.8-2) unstable; urgency=low
+
+  * Add bash and fish completions
+  * Add smoke tests
+  * Fix watch
+  * Watch version 5
+  * Std-ver 4.7.3
+
+ -- Ermakov Alexander <ermakovav@altgtu.ru>  Tue, 13 Jan 2026 09:32:41 +0700
+
 doh-cli (0.8-1) unstable; urgency=low
 
   * Initial release. (Closes: #958448)
