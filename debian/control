@@ -15,7 +15,6 @@ Vcs-Git: https://github.com/ermakov0/doh-cli.git
 
 Package: doh-cli
 Architecture: all
-Section: net
 Depends:
  ${misc:Depends},
  ${python3:Depends},
