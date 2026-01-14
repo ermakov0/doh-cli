@@ -1,6 +1,5 @@
 Source: doh-cli
 Maintainer: Ermakov Alexander <ermakovav@altgtu.ru>
-Uploaders: Ermakov Alexander <ermakovav@altgtu.ru>
 Section: net
 Build-Depends:
  debhelper-compat (= 13),
