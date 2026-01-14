@@ -5,6 +5,8 @@
 #export DH_VERBOSE = 1
 
 export PYBUILD_NAME = doh-cli
+# https://www.debian.org/doc/packaging-manuals/python-policy/#types-of-python-modules
+export PYBUILD_INSTALL_ARGS=--install-lib=/usr/share/doh-cli/ --install-scripts=/usr/share/doh-cli/
 
 %:
 	dh $@ --with python3 --with shell_completions --buildsystem=pybuild

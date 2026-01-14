@@ -1,5 +1,5 @@
 Source: doh-cli
-Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Maintainer: Ermakov Alexander <ermakovav@altgtu.ru>
 Uploaders: Ermakov Alexander <ermakovav@altgtu.ru>
 Section: net
 Build-Depends:
@@ -22,6 +22,7 @@ Recommends:
  jq,
 Suggests:
  bash-completion,
+ fish,
 Description: simple DNS-over-HTTPS client
  A simple DNS over HTTPS client for the command line.
  .
