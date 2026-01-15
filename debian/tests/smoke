@@ -1,5 +1,20 @@
 #!/usr/bin/bash
+#set -x
 
-doh-cli www.altstu.ru || exit 1
-doh-cli www.altstu.ru | diff - debian/tests/smoke1.stdout || exit 1
-doh-cli --json www.altstu.ru | jq '.[0].Answer' | diff - debian/tests/smoke2.stdout || exit 1
+# https://www.internic.net/domain/named.root
+
+# ; 
+# ; FORMERLY NS.NASA.GOV
+# ;
+# .                        3600000      NS    E.ROOT-SERVERS.NET.
+# E.ROOT-SERVERS.NET.      3600000      A     192.203.230.10
+# E.ROOT-SERVERS.NET.      3600000      AAAA  2001:500:a8::e
+
+DOMAIN='e.root-servers.net'
+
+doh-cli $DOMAIN > /dev/null || exit 1
+
+doh-cli $DOMAIN | diff - debian/tests/smokeA.stdout || exit 1
+doh-cli $DOMAIN A | diff - debian/tests/smokeA.stdout || exit 1
+doh-cli A $DOMAIN | diff - debian/tests/smokeA.stdout || exit 1
+doh-cli --json $DOMAIN | jq '.[0].Answer' | diff - debian/tests/smokeAjson.stdout || exit 1
