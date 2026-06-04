@@ -1,4 +1,4 @@
-.TH DOH-CLI 1 "Сентябрь 2025" "0.8" "Простой DNS-over-HTTPS клиент"
+.TH DOH-CLI 1 "Май 2026" "0.8" "Простой DNS-over-HTTPS клиент"
 
 .SH ИМЯ
 
@@ -9,7 +9,7 @@
 .B doh-cli
 .RI [ " ОПЦИИ " ]
 \fIдомен\fR
-[ \fIrr\fR ... ]
+[ \fIrr\fR ]
 
 .IR rr " := { A | AAAA | CNAME | HTTPS | MX | NS | SOA | SPF | SRV | SVCB | TXT | CAA | DNSKEY | DS }"
 
@@ -20,71 +20,58 @@
 .SH ОПЦИИ
 
 .TP
-.BR --debug
+\fB\-\-debug\fR
 выводить полный ответ сервера.
 
 .TP
-.BR --dns " " \fIdns\fR
+\fB\-\-dns\fR \fIdns\fR
 использовать DoH-провайдер. \fIdns\fR может принимать значения:
 .RS 4
 .IP "\fBlibredns\fR" 4
-.IX Item "libredns"
 по умолчанию.
 .IP "\fBlibredns-ads\fR" 4
-.IX Item "libredns-ads"
 LibreDNS No-Trackers/Ads.
 .IP "\fBgoogle\fR" 4
-.IX Item "google"
 .IP "\fBcloudflare\fR" 4
-.IX Item "cloudflare"
 .IP "\fBquad9\fR" 4
-.IX Item "quad9"
 .IP "\fBcleanbrowsing\fR" 4
-.IX Item "cleanbrowsing"
 блокировка доступа к порнографическим сайтам и сайтам для взрослых, а также к VPN.
 .IP "\fBcleanbrowsing-secure\fR" 4
-.IX Item "cleanbrowsing-secure"
 блокировка доступа к фишинговым, вредоносным программам и вредоносным доменам.
 .IP "\fBcleanbrowsing-adult\fR" 4
-.IX Item "cleanbrowsing-adult"
 блокировка доступа ко всем сайтам для взрослых.
 .IP "\fBcira\fR" 4
-.IX Item "cira"
-CIRA's Canadian Shield.
 .IP "\fBcira-protect\fR" 4
-.IX Item "cira-protectt"
 защита от вредоносных программ и фишинга.
 .IP "\fBcira-family\fR" 4
-.IX Item "cira-family"
 блокировка порнографического контента плюс защита.
 .IP "\fBsecuredns\fR" 4
-.IX Item "securedns"
 .IP "\fBsecuredns-ads\fR" 4
-.IX Item "securedns-ads"
 блокировка рекламы, вредоносных программ и фишинга.
 .RE
 
 .TP
-.BR --dnssec
+\fB\-\-dnssec\fR
 запросить подписи DNSSEC.
 
 .TP
-.BR --json
+\fB\-\-json\fR
 отображать ответ DNS в формате json.
+
 .TP
-.BR --time
+\fB\-\-time\fR
 показывать время запроса. Значение равно затраченному времени на запрос клиента к DoH-провайдеру, а не к фактическому ответу DNS.
 
 .TP
-.BR --url " " \fIurl\fP
+\fB\-\-url\fR \fIurl\fP
 использовать cобственный DoH-провайдер. Этот параметр переопределяет параметр \fB--dns\fR.
 
 .TP
-.BR --verbose
+\fB\-\-verbose\fR
 показать весь запрос.
 
 .TP
-.BR -v ", " --version
+\fB\-v\fR, \fB\-\-version\fR
 показать информацию о версии и выйти.
 
 .SH ПРИМЕРЫ

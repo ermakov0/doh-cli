@@ -10,3 +10,6 @@ export PYBUILD_INSTALL_ARGS=--install-lib=/usr/share/doh-cli/ --install-scripts=
 
 %:
 	dh $@ --with python3 --with shell_completions --buildsystem=pybuild
+
+execute_after_dh_auto_install:
+	rm -rf debian/doh-cli/usr/share/doh-cli/*.egg-info

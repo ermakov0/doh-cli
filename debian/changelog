@@ -1,6 +1,14 @@
+doh-cli (0.8-3) unstable; urgency=medium
+
+  * Remove deprecated .egg-info directory.
+  * Fix warnings in a manual page.
+  * Std-ver 4.7.4. (trivial update)
+
+ -- Alexander Ermakov <ermakovav@altgtu.ru>  Thu, 04 Jun 2026 09:43:02 +0700
+
 doh-cli (0.8-2) unstable; urgency=low
 
-  * Set self as maintainer (Closes: #1125377)
+  * Set myself as maintainer (Closes: #1125377)
   * Packaged a program instead of a module
   * Add bash and fish completions
   * Add smoke tests (e.root-servers.net)
@@ -8,10 +16,10 @@ doh-cli (0.8-2) unstable; urgency=low
   * Watch version 5 (trivial update)
   * Std-ver 4.7.3 (trivial update)
 
- -- Ermakov Alexander <ermakovav@altgtu.ru>  Thu, 15 Jan 2026 08:15:26 +0700
+ -- Alexander Ermakov <ermakovav@altgtu.ru>  Thu, 15 Jan 2026 08:15:26 +0700
 
 doh-cli (0.8-1) unstable; urgency=low
 
   * Initial release. (Closes: #958448)
 
- -- Ermakov Alexander <ermakovav@altgtu.ru>  Thu, 02 Oct 2025 18:19:32 +0700
+ -- Alexander Ermakov <ermakovav@altgtu.ru>  Thu, 02 Oct 2025 18:19:32 +0700
