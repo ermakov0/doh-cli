@@ -6,7 +6,10 @@
 
 export PYBUILD_NAME = doh-cli
 # https://www.debian.org/doc/packaging-manuals/python-policy/#types-of-python-modules
-export PYBUILD_INSTALL_ARGS=--install-lib=/usr/share/doh-cli/ --install-scripts=/usr/share/doh-cli/
+export PYBUILD_INSTALL_DIR=/usr/share/doh-cli
+export PYBUILD_AFTER_INSTALL= \
+	rm -vrf {destdir}$(PYBUILD_INSTALL_DIR)/doh_cli-*.dist-info/licenses && \
+	mv -v {destdir}/usr/bin/doh-cli {destdir}$(PYBUILD_INSTALL_DIR)
 
 %:
 	dh $@ --with python3 --with shell_completions --buildsystem=pybuild

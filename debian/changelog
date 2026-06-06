@@ -1,10 +1,10 @@
-doh-cli (0.8-3) UNRELEASED; urgency=medium
+doh-cli (0.8-3) unstable; urgency=medium
 
-  * Remove deprecated .egg-info directory.
+  * The modern replacement for .egg-info.
   * Fix warnings in a manual page.
   * Std-ver 4.7.4. (trivial update)
 
- -- Alexander Ermakov <ermakovav@altgtu.ru>  Fri, 05 Jun 2026 13:41:56 +0700
+ -- Alexander Ermakov <ermakovav@altgtu.ru>  Sat, 06 Jun 2026 11:02:52 +0700
 
 doh-cli (0.8-2) unstable; urgency=low
 
