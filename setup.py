@@ -26,7 +26,7 @@ setup(
     license="LICENSE",
     install_requires=[
         "dnspython",
-        "requests"
+        "httpx[http2]"
     ],
     packages=["doh_cli"],
     scripts=["bin/doh-cli"],

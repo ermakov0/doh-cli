@@ -1,6 +1,6 @@
-Metadata-Version: 2.2
+Metadata-Version: 2.4
 Name: doh-cli
-Version: 0.8
+Version: 0.9
 Summary: a simple DNS-over-HTTPS client
 Home-page: https://gitlab.com/libreops/doh-cli
 Author: LibreOps
@@ -15,7 +15,7 @@ Classifier: Topic :: Internet :: Name Service (DNS)
 Description-Content-Type: text/markdown
 License-File: LICENSE
 Requires-Dist: dnspython
-Requires-Dist: requests
+Requires-Dist: httpx[http2]
 Dynamic: author
 Dynamic: author-email
 Dynamic: classifier
@@ -23,6 +23,7 @@ Dynamic: description
 Dynamic: description-content-type
 Dynamic: home-page
 Dynamic: license
+Dynamic: license-file
 Dynamic: requires-dist
 Dynamic: summary
 
@@ -93,7 +94,7 @@ doh-cli --help
 - [Quad9](https://quad9.net)
 - [CleanBrowsing](https://doh.cleanbrowsing.org)
 - [CIRA](https://www.cira.ca/cybersecurity-services/canadian-shield)
-- [SecureDNS](https://securedns.eu/)
+- [AdGuard](https://adguard-dns.io)
 - you may also provide your own DoH server URL
 
 ### DoH Options
@@ -109,8 +110,8 @@ doh-cli --help
 - cira (CIRA's Canadian Shield)
 - cira-protect (Malware and phishing protection)
 - cira-family (blocking pornographic content plus protected)
-- securedns
-- securedns-ads (blockign ads, malware and phishing)
+- adguard (AdGuard DNS, blocks ads and trackers)
+- adguard-unfiltered (AdGuard DNS without filtering)
 
 ## Some Examples
 
@@ -398,6 +399,11 @@ doh-cli --url https://doh.libredns.gr/dns-query www.example.com A
 # Changelog
 
 This document tracks all notable changes to doh-cli, introduced on each release.
+
+## v0.9 - 2026-11-15
+
+- Replace requests with httpx to support HTTP/2-only DoH endpoints
+- Replace SecureDNS endpoints with AdGuard and AdGuard Unfiltered
 
 ## v0.8 - 2025-01-10
 

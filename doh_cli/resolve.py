@@ -1,5 +1,5 @@
 import dns.message
-import requests
+import httpx
 import base64
 import json
 import sys
@@ -21,10 +21,10 @@ def answer(domain, rr, endpoint, format_json=None, debug=None, verbose=None,
 
     start_time = time.time() * 1000
     try:
-        r = requests.get(endpoint, params={"dns": dns_req},
-                         headers={"Content-type": "application/dns-message"})
+        r = httpx.Client(http2=True).get(endpoint, params={"dns": dns_req},
+                                         headers={"Content-type": "application/dns-message"})
         r.raise_for_status()
-    except requests.RequestException as reqerror:
+    except httpx.HTTPError as reqerror:
         sys.stderr.write("{0}\n".format(reqerror))
         sys.exit(1)
     query_time = time.time() * 1000

@@ -65,7 +65,7 @@ doh-cli --help
 - [Quad9](https://quad9.net)
 - [CleanBrowsing](https://doh.cleanbrowsing.org)
 - [CIRA](https://www.cira.ca/cybersecurity-services/canadian-shield)
-- [SecureDNS](https://securedns.eu/)
+- [AdGuard](https://adguard-dns.io)
 - you may also provide your own DoH server URL
 
 ### DoH Options
@@ -81,8 +81,8 @@ doh-cli --help
 - cira (CIRA's Canadian Shield)
 - cira-protect (Malware and phishing protection)
 - cira-family (blocking pornographic content plus protected)
-- securedns
-- securedns-ads (blockign ads, malware and phishing)
+- adguard (AdGuard DNS, blocks ads and trackers)
+- adguard-unfiltered (AdGuard DNS without filtering)
 
 ## Some Examples
 

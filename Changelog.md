@@ -2,6 +2,11 @@
 
 This document tracks all notable changes to doh-cli, introduced on each release.
 
+## v0.9 - 2026-11-15
+
+- Replace requests with httpx to support HTTP/2-only DoH endpoints
+- Replace SecureDNS endpoints with AdGuard and AdGuard Unfiltered
+
 ## v0.8 - 2025-01-10
 
 - Added support for RFC9460

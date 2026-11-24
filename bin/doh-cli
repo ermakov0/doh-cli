@@ -17,11 +17,12 @@ DOH_URL = {
     "cira": "https://private.canadianshield.cira.ca/dns-query",
     "cira-protect": "https://protected.canadianshield.cira.ca/dns-query",
     "cira-family": "https://family.canadianshield.cira.ca/dns-query",
-    "securedns": "https://doh.securedns.eu/dns-query",
-    "securedns-ads": "https://ads-doh.securedns.eu/dns-query",
+    "adguard": "https://dns.adguard-dns.com/dns-query",
+    "adguard-unfiltered": "https://unfiltered.adguard-dns.com/dns-query",
 }
 
-RR = ["A", "AAAA", "CNAME", "HTTPS", "MX", "NS", "SOA", "SPF", "SRV", "SVCB", "TXT", "CAA", "DNSKEY", "DS"]
+RR = ["A", "AAAA", "CNAME", "HTTPS", "MX", "NS", "SOA", "SPF", "SRV", "SVCB", "TXT", "CAA",
+      "DNSKEY", "DS"]
 
 
 if __name__ == '__main__':
@@ -29,7 +30,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser("doh-cli", description="a simple DNS over HTTPS client",
                                      epilog="eg. doh-cli libredns.gr")
     parser.add_argument("domain", help="The Domain Name System to resolve")
-    parser.add_argument("rr", help="Supported DNS Resourse Records",
+    parser.add_argument("rr", help="Supported DNS Resource Records",
                         metavar="{0}".format(", ".join(RR)), default="A", nargs="?")
     parser.add_argument("--debug", help="show the entire response", action="store_true")
     parser.add_argument("--verbose", help="show the entire request", action="store_true")

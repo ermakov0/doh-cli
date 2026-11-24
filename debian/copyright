@@ -4,7 +4,7 @@ Upstream-Contact: LibreOps <team@libreops.cc>
 Source: https://gitlab.com/libreops/doh-cli
 
 Files: *
-Copyright: 2019-2025, LibreOps <team@libreops.cc>
+Copyright: 2019-2026, LibreOps <team@libreops.cc>
 License: GPL-3-only
 
 Files: debian/*

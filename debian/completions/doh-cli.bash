@@ -10,7 +10,7 @@ _doh-cli() {
   else
     case "${prev}" in
       --dns)
-        words="libredns libredns-ads google cloudflare quad9 cleanbrowsing cleanbrowsing-secure cleanbrowsing-adult cira cira-protect cira-family securedns securedns-ads"
+        words="libredns libredns-ads google cloudflare quad9 cleanbrowsing cleanbrowsing-secure cleanbrowsing-adult cira cira-protect cira-family adguard adguard-unfiltered"
         ;;
       *)
         words="A AAAA CNAME HTTPS MX NS SOA SPF SRV SVCB TXT CAA DNSKEY DS"

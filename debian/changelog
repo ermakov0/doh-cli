@@ -1,3 +1,10 @@
+doh-cli (0.9-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump debhelper-compat to 14.
+
+ -- Alexander Ermakov <ermakovav@altgtu.ru>  Tue, 24 Nov 2026 08:12:46 +0700
+
 doh-cli (0.8-3) unstable; urgency=medium
 
   * The modern replacement for .egg-info.

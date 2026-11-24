@@ -2,8 +2,9 @@ Source: doh-cli
 Maintainer: Alexander Ermakov <ermakovav@altgtu.ru>
 Section: net
 Build-Depends:
- debhelper-compat (= 13),
+ debhelper-compat (= 14),
  dh-python,
+ dh-sequence-single-binary,
  dh-shell-completions,
  pybuild-plugin-pyproject,
  python3,
@@ -16,7 +17,6 @@ Vcs-Git: https://github.com/ermakov0/doh-cli.git
 Package: doh-cli
 Architecture: all
 Depends:
- ${misc:Depends},
  ${python3:Depends},
 Recommends:
  jq,
